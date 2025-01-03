@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useRef, useEffect } from 'react';
-import "./app.css"; 
+import "./app.css";
 
 const HomePage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -10,7 +11,7 @@ const HomePage = () => {
   const sourceRef = useRef(null);
   const animationRef = useRef(null);
   const canvasRef = useRef(null);
-  
+
   // Grid configuration
   const ACTIVE_ROWS = 40;
   const ACTIVE_COLS = 165;
@@ -24,46 +25,44 @@ const HomePage = () => {
   const rotationRef = useRef(0);
   const zoomFactorRef = useRef(1);
 
+  useEffect(() => {
+    const navItems = document.querySelectorAll('.nav-item');
+    const underline = document.querySelector('.underline');
+    const navbar = document.querySelector('.navbar');
 
-useEffect(() => {
-  const navItems = document.querySelectorAll('.nav-item');
-  const underline = document.querySelector('.underline');
-  const navbar = document.querySelector('.navbar');
+    function updateUnderlinePosition(el) {
+      const elRect = el.getBoundingClientRect();
+      const navbarRect = navbar.getBoundingClientRect();
+      underline.style.width = `${elRect.width}px`;
+      underline.style.left = `${elRect.left - navbarRect.left}px`;
+    }
 
-  function updateUnderlinePosition(el) {
-    const elRect = el.getBoundingClientRect();
-    const navbarRect = navbar.getBoundingClientRect();
-    underline.style.width = `${elRect.width}px`;
-    underline.style.left = `${elRect.left - navbarRect.left}px`;
-  }
-
-  navItems.forEach((item) => {
-    item.addEventListener('mouseenter', () => {
-      updateUnderlinePosition(item);
-      underline.style.opacity = 1;
-    });
-  });
-
-  navbar?.addEventListener('mouseleave', () => {
-    underline.style.opacity = 0;
-  });
-
-  const selectedItem = document.querySelector('.nav-item.selected');
-  if (selectedItem) {
-    updateUnderlinePosition(selectedItem);
-    underline.style.opacity = 1;
-  }
-
-  return () => {
     navItems.forEach((item) => {
-      item.removeEventListener('mouseenter', () => updateUnderlinePosition(item));
+      item.addEventListener('mouseenter', () => {
+        updateUnderlinePosition(item);
+        underline.style.opacity = 1;
+      });
     });
-    navbar?.removeEventListener('mouseleave', () => {
+
+    navbar?.addEventListener('mouseleave', () => {
       underline.style.opacity = 0;
     });
-  };
-}, []);
 
+    const selectedItem = document.querySelector('.nav-item.selected');
+    if (selectedItem) {
+      updateUnderlinePosition(selectedItem);
+      underline.style.opacity = 1;
+    }
+
+    return () => {
+      navItems.forEach((item) => {
+        item.removeEventListener('mouseenter', () => updateUnderlinePosition(item));
+      });
+      navbar?.removeEventListener('mouseleave', () => {
+        underline.style.opacity = 0;
+      });
+    };
+  }, []);
 
   useEffect(() => {
     audioContextRef.current = new (window.AudioContext || window.webkitAudioContext)();
@@ -207,6 +206,7 @@ useEffect(() => {
   
     drawFrame();
   };
+
   return (
     <div className="page-container">
       {/* Background Canvas :D*/}
@@ -300,7 +300,6 @@ useEffect(() => {
       </div>
       <script src="script.js"></script>
     </div>
-  
   );
 };
 
