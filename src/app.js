@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import "./app.css"; 
-import logo from './logo.svg';
-import logotext from './logo-text.png';
 
 const HomePage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -219,10 +217,10 @@ useEffect(() => {
           <div className="logocontainer">
             <div className="pulse-container">
               <div className="rotate-div">
-                <img src={logo}  alt="Logo" className="logo" />
+                <img src="/logo.svg" alt="Logo" className="logo" />
               </div>
             </div>
-            <img src={logotext}  alt="Text" className="text" />
+            <img src="/logo-text.png" alt="Text" className="text" />
           </div>
           <div className="user">
             <div className="user-info">
@@ -245,8 +243,9 @@ useEffect(() => {
           <div className="why">
             <div className="whyvideo">
               <iframe
+                title="Why play hexis video"
                 src="https://www.youtube.com/embed/hYLbXZ-8gx8"
-                frameBorder="0"
+                style={{ border: 0 }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
