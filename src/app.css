@@ -1,38 +1,275 @@
-.app {
-  text-align: center;
-}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #254f7b;
 
-.app-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .app-logo {
-    animation: app-logo-spin infinite 20s linear;
-  }
-}
-
-.app-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-size: fill;
+  background-position: center;
+  height: 100vh; 
+  display: flex; 
+  justify-content: center; 
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.app-link {
-  color: #61dafb;
+.page {
+  width: 60vw;
+  margin: 150px auto 0; 
+  top: 550px;
+  position: relative; 
 }
 
-@keyframes app-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .text {
+      width: 220px;
+      height: auto;
+      margin-left: 30px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .logo {
+      width: 170px; 
+      height: auto;
+      margin-right: 20px;
   }
+
+  .toparea {
+
+      display: flex;                
+      justify-content: space-between;
+      align-items: center;         
+      padding: 10px;             
+  }
+  
+  .logocontainer {
+      display: flex;               
+      align-items: center;      
+      justify-content: center;     
+      width: 400px;            
+  }
+  
+  .user {
+      display: flex;                 
+      align-items: center;         
+      text-align: right;    
+      align-self:flex-end;
+  }
+  
+  .profile-pic {
+      width: 50px;           
+      height: 50px;                 
+      background-color: #ff0000;       
+      margin-right: 10px;    
+  }
+  
+  .main-content {
+      display: flex;
+      width: 100%;
+      background-image: url(hexisg.png);
+      justify-content: space-between; 
+      height: 400px;
+  }
+
+  .maintext {
+margin: 0px 20px ;   
+      color: white;
+  }
+
+  .download-btn {
+      align-self: flex-end; 
+      background-color: #4CAF50;
+      padding: 20px 50px;
+      font-size: 30px;
+      margin: 20px;
+      font-weight: 100;
+      color: white;
+      margin-left: auto; 
+      text-align: center; 
+  }
+  .user-info {
+      display: flex;    
+      margin-right: 5px;     
+      color: white;
+      flex-direction: column;  
+  }
+.therest {
+  width: 100%;
+  height: 1000px;
+  background-color: rgb(243, 243, 243);
 }
+  .pulse-container {
+      width: 170px;
+      height: 170px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: pulse 1s infinite ease-in-out;
+  }
+
+  .truepage {
+      margin-top: 20px;
+      background-color: white;
+  }
+
+  h1 {
+      font-weight: 100;
+      font-size: 40px;
+  }
+  
+  .rotate-div {
+      width: 170px;
+      height: 170px;
+      animation: rotate 8s infinite linear;
+  }
+
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    margin: 0;
+  }
+  
+  
+  .navbar ul {
+     margin-right: auto;
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      
+  }
+
+  .why {
+      height: 400px;
+      background-color: azure;
+      display: flex;
+
+      justify-content: space-between;
+      width: 100%;
+
+      margin: 0 auto;
+  }
+
+  .whyvideo {
+      flex: 1;
+      align-self: center;
+  }
+
+  .whycontent {
+      flex: 1;
+align-self: top;
+margin-top: 40px;
+  }
+
+
+
+  iframe {
+      padding-left: 30px;
+width: 500px;
+height: 300px
+
+  }
+  
+  .nav-item {
+      padding: 0px;
+      text-decoration: none;
+      color: white;
+      font-size: 30px;
+      font-weight: 100;
+      position: relative;
+
+  }
+  
+.navbar input[type=text] {
+  float: right;
+  padding: 6px;
+  margin: 14px 24px;
+background-color: #424242;
+  border: none;
+  font-size: 17px;
+}
+
+  
+  .selected {
+      color: white;
+  }
+  
+  .underline {
+      position: absolute;
+      display:flex;
+      bottom: 0;
+      left: 0;
+      width: 50px; 
+      height: 3px;
+      background-color: rgb(255, 0, 0);
+      transition: all 0.3s ease;
+  }
+  
+  .nav-item:hover {
+      color: #ccc;
+  }
+  
+  @keyframes pulse {
+      0% {
+          transform: scale(1.05);
+
+      }
+      50% {
+          transform: scale(1);
+
+      }
+      100% {
+          transform: scale(1);
+
+      }
+  }
+  
+  @keyframes rotate {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+  .canvas-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    z-index: -10;
+  }
+   
+    
+    .page-container {
+      position: relative;
+      z-index: 0;
+    }
+    
+
+    .inset-0 {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .w-full {
+      width: 100%;
+    }
+    
+    .h-full {
+      height: 100%;
+    }
+    
+    .fixed {
+      position: fixed;
+    }
+    
+    .-z-10 {
+      z-index: -10;
+    }
+    
