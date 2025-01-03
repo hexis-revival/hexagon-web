@@ -251,8 +251,11 @@ const HomePage = () => {
               ></iframe>
             </div>
             <div className="why-content">
-              <h1>Why play hexis??</h1>
-              <p>It's a very game made by lord dienay</p>
+              <h1>What is hexis?</h1>
+              <p>
+                Hexis was a free-to-play rhythm game developed by Daniel (Dienay), drawing inspiration from both osu! and the Nintendo DS game Elite Beat Agents.
+                The project was discontinued indefinitely in 2017, which leads us to the creation of this revival project.
+              </p>
             </div>
           </div>
           <div className="content-bottom">
