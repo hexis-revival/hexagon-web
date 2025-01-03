@@ -11,6 +11,12 @@ body {
     align-items: center;
 }
 
+h1 {
+    font-weight: 250;
+    font-size: 40px;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+
 .main {
     width: 60vw;
     margin: 150px auto 0;
@@ -70,6 +76,7 @@ body {
 .main-text {
     margin: 0px 20px;
     color: white;
+    text-shadow: 2px 1px 2px #000000;
 }
 
 .download-button {
@@ -109,11 +116,6 @@ body {
 .main-bottom {
     margin-top: 20px;
     background-color: white;
-}
-
-h1 {
-    font-weight: 100;
-    font-size: 40px;
 }
 
 .rotate-div {
