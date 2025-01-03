@@ -11,26 +11,26 @@ body {
     align-items: center;
 }
 
-.page {
+.main {
     width: 60vw;
     margin: 150px auto 0;
     top: 550px;
     position: relative;
 }
 
-.text {
+.logo-text {
     width: 220px;
     height: auto;
     margin-left: 30px;
 }
 
-.logo {
+.logo-image {
     width: 170px;
     height: auto;
     margin-right: 20px;
 }
 
-.toparea {
+.main-top {
 
     display: flex;
     justify-content: space-between;
@@ -38,7 +38,7 @@ body {
     padding: 10px;
 }
 
-.logocontainer {
+.logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,14 +52,14 @@ body {
     align-self: flex-end;
 }
 
-.profile-pic {
+.profile-picture {
     width: 50px;
     height: 50px;
     background-color: #ff0000;
     margin-right: 10px;
 }
 
-.main-content {
+.content {
     display: flex;
     width: 100%;
     background-image: url("/public/hexis-background.png");
@@ -67,12 +67,12 @@ body {
     height: 400px;
 }
 
-.maintext {
+.main-text {
     margin: 0px 20px;
     color: white;
 }
 
-.download-btn {
+.download-button {
     align-self: flex-end;
     background-color: #4CAF50;
     padding: 20px 50px;
@@ -91,7 +91,7 @@ body {
     flex-direction: column;
 }
 
-.therest {
+.content-bottom {
     width: 100%;
     height: 1000px;
     background-color: rgb(243, 243, 243);
@@ -106,7 +106,7 @@ body {
     animation: pulse 1s infinite ease-in-out;
 }
 
-.truepage {
+.main-bottom {
     margin-top: 20px;
     background-color: white;
 }
@@ -122,7 +122,7 @@ h1 {
     animation: rotate 8s infinite linear;
 }
 
-.navbar {
+.nav-container {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -135,7 +135,7 @@ h1 {
 }
 
 
-.navbar ul {
+.nav-container ul {
     margin-right: auto;
     list-style: none;
     display: flex;
@@ -143,7 +143,7 @@ h1 {
 
 }
 
-.why {
+.content-top {
     height: 400px;
     background-color: azure;
     display: flex;
@@ -154,12 +154,12 @@ h1 {
     margin: 0 auto;
 }
 
-.whyvideo {
+.why-video {
     flex: 1;
     align-self: center;
 }
 
-.whycontent {
+.why-content {
     flex: 1;
     align-self: top;
     margin-top: 40px;
@@ -196,7 +196,7 @@ iframe {
     color: white;
 }
 
-.underline {
+.nav-underline {
     position: absolute;
     display: flex;
     bottom: 0;
@@ -238,7 +238,7 @@ iframe {
     }
 }
 
-.canvas-background {
+.background-canvas {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -248,7 +248,7 @@ iframe {
 }
 
 
-.page-container {
+.app {
     position: relative;
     z-index: 0;
 }

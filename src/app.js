@@ -27,8 +27,8 @@ const HomePage = () => {
 
   useEffect(() => {
     const navItems = document.querySelectorAll('.nav-item');
-    const underline = document.querySelector('.underline');
-    const navbar = document.querySelector('.navbar');
+    const underline = document.querySelector('.nav-underline');
+    const navbar = document.querySelector('.nav-container');
 
     function updateUnderlinePosition(el) {
       const elRect = el.getBoundingClientRect();
@@ -208,40 +208,40 @@ const HomePage = () => {
   };
 
   return (
-    <div className="page-container">
+    <div className="app">
       {/* Background Canvas :D*/}
-      <canvas ref={canvasRef} className="canvas-background"></canvas>
+      <canvas ref={canvasRef} className="background-canvas"></canvas>
       {/* Page Content */}
-      <div className="page">
-        <div className="toparea">
-          <div className="logocontainer">
+      <div className="main">
+        <div className="main-top">
+          <div className="logo-container">
             <div className="pulse-container">
               <div className="rotate-div">
-                <img src="/logo.svg" alt="Logo" className="logo" />
+                <img src="/logo.svg" alt="Logo" className="logo-image" />
               </div>
             </div>
-            <img src="/logo-text.png" alt="Text" className="text" />
+            <img src="/logo-text.png" alt="Text" className="logo-text" />
           </div>
           <div className="user">
             <div className="user-info">
               <span>Guest</span>
               <small>Welcome!</small>
             </div>
-            <div className="profile-pic"></div>
+            <div className="profile-picture"></div>
           </div>
         </div>
 
-        <div className="truepage">
-          <div className="main-content">
-            <div className="maintext">
+        <div className="main-bottom">
+          <div className="content">
+            <div className="main-text">
               <h1>It's a game.. I think</h1>
-              <p className="subtext">I can't believe it's not butter...</p>
+              <p>I can't believe it's not butter...</p>
             </div>
-            <a className="download-btn">Totally legit download</a>
+            <a className="download-button">Totally legit download</a>
           </div>
 
-          <div className="why">
-            <div className="whyvideo">
+          <div className="content-top">
+            <div className="why-video">
               <iframe
                 title="Why play hexis video"
                 src="https://www.youtube.com/embed/hYLbXZ-8gx8"
@@ -250,12 +250,12 @@ const HomePage = () => {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="whycontent">
+            <div className="why-content">
               <h1>Why play hexis??</h1>
               <p>It's a very game made by lord dienay</p>
             </div>
           </div>
-          <div className="therest">
+          <div className="content-bottom">
             <div className="flex flex-col items-center space-y-4 p-4">
               <div className="space-y-4">
                 <input
@@ -273,14 +273,14 @@ const HomePage = () => {
                 </button>
               </div>
 
-              <audio ref={audioRef} className="hidden" />
+              <audio ref={audioRef} loop />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="navbar">
-        <div className="underline"></div>
+      <div className="nav-container">
+        <div className="nav-underline"></div>
         <ul>
           <li>
             <a href="#" className="nav-item selected">Home</a>
