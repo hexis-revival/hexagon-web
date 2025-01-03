@@ -14,7 +14,6 @@ body {
 h1 {
     font-weight: 250;
     font-size: 40px;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
 }
 
 .main {
@@ -37,7 +36,6 @@ h1 {
 }
 
 .main-top {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -77,6 +75,10 @@ h1 {
     margin: 0px 20px;
     color: white;
     text-shadow: 2px 1px 2px #000000;
+}
+
+.main-text h1 {
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.5);
 }
 
 .download-button {
