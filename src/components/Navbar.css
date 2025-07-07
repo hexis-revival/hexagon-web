@@ -1,0 +1,46 @@
+.nav-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    margin: 0;
+    z-index: 999;
+}
+
+
+.nav-container ul {
+    margin-right: auto;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+}
+
+.nav-item {
+    padding: 0px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+    position: relative;
+
+}
+
+.nav-underline {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: rgb(255, 0, 0);
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #ccc;
+}

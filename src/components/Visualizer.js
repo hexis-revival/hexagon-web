@@ -1,9 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useRef, useEffect } from 'react';
-import "./app.css";
+import {Link} from "react-router-dom";
 
-const HomePage = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+
+function Visualizer() {
+const [isPlaying, setIsPlaying] = useState(false);
   const [audioFile, setAudioFile] = useState(null);
   const audioRef = useRef(null);
   const analyserRef = useRef(null);
@@ -25,44 +25,6 @@ const HomePage = () => {
   const rotationRef = useRef(0);
   const zoomFactorRef = useRef(1);
 
-  useEffect(() => {
-    const navItems = document.querySelectorAll('.nav-item');
-    const underline = document.querySelector('.nav-underline');
-    const navbar = document.querySelector('.nav-container');
-
-    function updateUnderlinePosition(el) {
-      const elRect = el.getBoundingClientRect();
-      const navbarRect = navbar.getBoundingClientRect();
-      underline.style.width = `${elRect.width}px`;
-      underline.style.left = `${elRect.left - navbarRect.left}px`;
-    }
-
-    navItems.forEach((item) => {
-      item.addEventListener('mouseenter', () => {
-        updateUnderlinePosition(item);
-        underline.style.opacity = 1;
-      });
-    });
-
-    navbar?.addEventListener('mouseleave', () => {
-      underline.style.opacity = 0;
-    });
-
-    const selectedItem = document.querySelector('.nav-item.selected');
-    if (selectedItem) {
-      updateUnderlinePosition(selectedItem);
-      underline.style.opacity = 1;
-    }
-
-    return () => {
-      navItems.forEach((item) => {
-        item.removeEventListener('mouseenter', () => updateUnderlinePosition(item));
-      });
-      navbar?.removeEventListener('mouseleave', () => {
-        underline.style.opacity = 0;
-      });
-    };
-  }, []);
 
   useEffect(() => {
     audioContextRef.current = new (window.AudioContext || window.webkitAudioContext)();
@@ -121,6 +83,8 @@ const HomePage = () => {
     }
     setIsPlaying(!isPlaying);
   };
+
+
 
   const draw = () => {
     if (!canvasRef.current || !analyserRef.current) return;
@@ -206,102 +170,9 @@ const HomePage = () => {
   
     drawFrame();
   };
-
   return (
-    <div className="app">
-      {/* Background Canvas :D*/}
-      <canvas ref={canvasRef} className="background-canvas"></canvas>
-      {/* Page Content */}
-      <div className="main">
-        <div className="main-top">
-          <div className="logo-container">
-            <div className="pulse-container">
-              <div className="rotate-div">
-                <img src="/logo.svg" alt="Logo" className="logo-image" />
-              </div>
-            </div>
-            <img src="/logo-text.png" alt="Text" className="logo-text" />
-          </div>
-          <div className="user">
-            <div className="user-info">
-              <span>Guest</span>
-              <small>Welcome!</small>
-            </div>
-            <div className="profile-picture"></div>
-          </div>
-        </div>
+   <canvas ref={canvasRef} className="background-canvas"></canvas>
+  )
+}
 
-        <div className="main-bottom">
-          <div className="content">
-            <div className="main-text">
-              <h1>It's a game.. I think</h1>
-              <p>I can't believe it's not butter...</p>
-            </div>
-            <a className="download-button">Totally legit download</a>
-          </div>
-
-          <div className="content-top">
-            <div className="why-video">
-              <iframe
-                title="Why play hexis video"
-                src="https://www.youtube.com/embed/hYLbXZ-8gx8"
-                style={{ border: 0 }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="why-content">
-              <h1>What is hexis?</h1>
-              <p>
-                Hexis was a free-to-play rhythm game developed by Daniel (Dienay), drawing inspiration from both osu! and the Nintendo DS game Elite Beat Agents.
-                The project was discontinued indefinitely in 2017, which leads us to the creation of this revival project.
-              </p>
-            </div>
-          </div>
-          <div className="content-bottom">
-            <div className="flex flex-col items-center space-y-4 p-4">
-              <div className="space-y-4">
-                <input
-                  type="file"
-                  accept="audio/*"
-                  onChange={handleFileChange}
-                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-                />
-                <button
-                  onClick={togglePlay}
-                  disabled={!audioFile}
-                  className="px-4 py-2 bg-blue-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isPlaying ? "Pause" : "Play"}
-                </button>
-              </div>
-
-              <audio ref={audioRef} loop />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="nav-container">
-        <div className="nav-underline"></div>
-        <ul>
-          <li>
-            <a href="#" className="nav-item selected">Home</a>
-          </li>
-          <li>
-            <a href="#" className="nav-item">Beatmaps</a>
-          </li>
-          <li>
-            <a href="#" className="nav-item">Rankings</a>
-          </li>
-          <li>
-            <a href="#" className="nav-item">Forums</a>
-          </li>
-        </ul>
-      </div>
-      <script src="script.js"></script>
-    </div>
-  );
-};
-
-export default HomePage;
+export default Visualizer
