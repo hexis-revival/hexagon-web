@@ -1,6 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
 import Visualizer from '../components/Visualizer';
+import Userbox from '../components/Userbox'
+import '../styles/Home.css';
 function Home() {
   
   return (
@@ -17,13 +19,7 @@ function Home() {
             </div>
             <img src="/logo-text.png" alt="Text" className="logo-text" />
           </div>
-          <div className="user">
-            <div className="user-info">
-              <span>Guest</span>
-              <small>Welcome!</small>
-            </div>
-            <div className="profile-picture"></div>
-          </div>
+
         </div>
 
         <div className="main-bottom">

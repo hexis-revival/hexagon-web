@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './Navbar.css';
+import '../styles/Navbar.css';
 import {Link} from "react-router-dom";
 
 
+import Userbox from '../components/Userbox';
 function Navbar() {
 
 useEffect(() => {
@@ -60,6 +61,8 @@ useEffect(() => {
             <a href="#" className="nav-item"><Link to={"/forums"}>Forums</Link></a>
           </li>
         </ul>
+
+          <Userbox />
       </div>
 
   )

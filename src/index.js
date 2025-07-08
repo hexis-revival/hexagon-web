@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -11,11 +10,12 @@ import Home from './pages/Home';
 import Rankings from './pages/Rankings';
 import Beatmaps from './pages/Beatmaps';
 import Forums from './pages/Forums';
+import Register from './pages/Register'
 
 const router = createBrowserRouter([
   {
     path: "",
-    element: <App />,
+    element: <Home />,
   },
   {
     path: "/Home",
@@ -32,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/Forums",
     element: <Forums />,
+  },
+    {
+    path: "/Register",
+    element: <Register />,
   },
 ]);
 

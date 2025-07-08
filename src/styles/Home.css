@@ -1,0 +1,60 @@
+
+.content {
+    display: flex;
+    width: 100%;
+    background-image: url("/public/hexis-background.png");
+    justify-content: space-between;
+    height: 400px;
+}
+
+.main-text {
+    margin: 0px 20px;
+    color: white;
+    text-shadow: 2px 1px 2px #000000;
+}
+
+.main-text h1 {
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.5);
+}
+
+.download-button {
+    align-self: flex-end;
+    background-color: #4CAF50;
+    padding: 20px 50px;
+    font-size: 30px;
+    margin: 20px;
+    font-weight: 300;
+    color: white;
+    margin-left: auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.why-video {
+    flex: 1;
+    align-self: center;
+}
+
+.why-content {
+    flex: 1;
+    align-self: top;
+    margin: 40px;
+}
+
+.why-video iframe {
+    padding-left: 30px;
+    width: 500px;
+    height: 300px
+}
+
+.content-top {
+    height: 400px;
+    background-color: azure;
+    display: flex;
+
+    justify-content: space-between;
+    width: 100%;
+
+    margin: 0 auto;
+}
+
