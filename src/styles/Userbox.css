@@ -1,0 +1,38 @@
+.user {
+    display: flex;
+    align-items: center;
+    text-align: right;
+    align-self: flex-end;
+    padding: 5px;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: start;
+    margin: 5px;
+    user-select: none;
+}
+
+.user>* {
+    display: flex;
+    flex: auto 1 1;
+}
+
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+
+    background-color: #ff0000;
+}
+
+
+.user-info {
+    display: flex;
+    margin-right: 10px;
+    color: white;
+    flex-direction: column;
+}
+
+.user:hover {
+    background-color: rgba(255, 255, 255, 0.068);
+    cursor: pointer;
+}
