@@ -10,7 +10,8 @@ import Home from './pages/Home';
 import Rankings from './pages/Rankings';
 import Beatmaps from './pages/Beatmaps';
 import Forums from './pages/Forums';
-import Register from './pages/Register'
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
     {
     path: "/Register",
     element: <Register />,
+  },
+      {
+    path: "/Login",
+    element: <Login />,
   },
 ]);
 

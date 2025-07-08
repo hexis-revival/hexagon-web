@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
+import {Link} from "react-router-dom";
+
 function Register() {
 
   const [ip, setIp] = useState()
 
   const getIp = async () => {
-    const response = await fetch('https://ipapi.co/json')
+    const response = await fetch('https://api.ipify.org?format=json')
     const data = await response.json()
 
     setIp(data.ip)
@@ -75,6 +77,8 @@ return (
       <button type="submit">Register</button>
       {success && <p>Registration sucess</p>}
     </form>
+
+      <a><Link to={"/login"}>Login instead...</Link></a>
   </div>
 )
 }
